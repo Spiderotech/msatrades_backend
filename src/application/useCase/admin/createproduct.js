@@ -5,10 +5,8 @@ const createproduct = async (name, description,category,subcategory,basePrice,st
 
     try {
         const data= productdata(name, description,category,subcategory,basePrice,stock,discount,discountType,size,images,tags)
-        console.log(data,"hello");
 
         const product = await repositories.createProduct(data)
-        console.log(product,"hhh");
     
         return { status: true,product }
 

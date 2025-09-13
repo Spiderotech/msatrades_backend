@@ -6,7 +6,6 @@ const getsingleorderdata =async (id,repositories) => {
 
         const orderdata =await repositories.getsingleorder(id)
 
-        console.log(orderdata);
         return { status: true,orderdata};
 
     } catch (err) {

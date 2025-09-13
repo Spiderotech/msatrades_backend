@@ -6,7 +6,6 @@ const getallorder =async (repositories) => {
 
         const orderdata =await repositories.getorders()
 
-        console.log(orderdata);
         return { status: true,orderdata};
 
     } catch (err) {

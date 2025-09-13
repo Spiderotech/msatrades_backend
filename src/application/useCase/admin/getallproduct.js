@@ -6,7 +6,6 @@ const getallproduct =async (repositories) => {
 
         const productdata =await repositories.getproducts()
 
-        console.log(productdata);
         return { status: true,productdata};
 
     } catch (err) {

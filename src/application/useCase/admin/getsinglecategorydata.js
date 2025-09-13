@@ -6,7 +6,6 @@ const getsinglecategorydata =async (id,repositories) => {
 
         const categorydata =await repositories.getsinglecategory(id)
 
-        console.log(categorydata);
         return { status: true,categorydata};
 
     } catch (err) {

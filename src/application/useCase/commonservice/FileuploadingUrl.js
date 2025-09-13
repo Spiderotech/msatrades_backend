@@ -9,7 +9,7 @@ import crypto,{randomBytes}from 'crypto'
 const fileUpload= async()=>{
     const region='ap-south-1';
     const bucketName='discount-application';
-    const accessKeyId=config.S3_ACESS_KEY;
+    const accessKeyId=AKIAW5LAGONU6H54L7D3;
     const secretAccessKey=config.S3_SECRET_KEY;
 
     const s3Client =new S3Client({

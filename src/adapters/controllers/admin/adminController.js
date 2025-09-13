@@ -22,9 +22,7 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
 
     const adminLogin = (req, res) => {
         const { email, password } = req.body
-        console.log(email, password);
         login(email, password, dbrepository, authService).then((response) => {
-            console.log(response);
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -38,7 +36,7 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
 
 
         createproduct(name, description, category, subcategory, basePrice, stock, discount, discountType, size, images, tags, dbrepository).then((response) => {
-            console.log(response, "ppp");
+        
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -49,7 +47,7 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const getallproducts = (req, res) => {
 
         getallproduct(dbrepository).then((response) => {
-            console.log(response);
+            
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -57,11 +55,11 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     }
     const addcategory = (req, res) => {
         const { name, description, isSubCategory, image, parentCategory } = req.body;
-        console.log(name, description, isSubCategory, image, parentCategory);
+       
 
 
         createcategory(name, description, isSubCategory, image, parentCategory, dbrepository).then((response) => {
-            console.log(response, "ppp");
+          
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -72,7 +70,7 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const getallcategory = (req, res) => {
 
         getallcategorydata(dbrepository).then((response) => {
-            console.log(response);
+          
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -82,11 +80,11 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const getSingleProduct = (req, res) => {
 
         const { id } = req.params;
-        console.log(id, "pooffh");
+       
 
 
         getsingleproductdata(id, dbrepository).then((response) => {
-            console.log(response);
+           
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -96,11 +94,9 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const getSingleCategory = (req, res) => {
 
         const { id } = req.params;
-        console.log(id, "pooffh");
 
 
         getsinglecategorydata(id, dbrepository).then((response) => {
-            console.log(response);
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -111,13 +107,12 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const addUserReview = (req, res) => {
 
         const { id } = req.params;
-        console.log(id, "pooffh");
+       
 
         const { name, email,review,rating } = req.body;
 
 
         addUserreviews(id,name, email,review,rating, dbrepository).then((response) => {
-            console.log(response);
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -130,18 +125,12 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
 
         const { products, totalAmount, paymentMethod, billingDetails, paymentStatus } = req.body;
 
-        console.log("Received Order Data:");
-        console.log("Products:", products);
-        console.log("Total Amount:", totalAmount);
-        console.log("Payment Method:", paymentMethod);
-        console.log("Billing Details:", billingDetails);
-        console.log("Payment Status:", paymentStatus);
 
         
 
 
         addUserneworder(products, totalAmount, paymentMethod, billingDetails, paymentStatus, dbrepository).then((response) => {
-            console.log(response);
+           
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -151,7 +140,6 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const getallorders = (req, res) => {
 
         getallorder(dbrepository).then((response) => {
-            console.log(response);
             res.json(response)
 
         }).catch((err) => console.log(err))
@@ -162,11 +150,9 @@ const adminController = (adminRepositoryInt, adminRepositoryImp, adminServiceInt
     const getSingleOrder = (req, res) => {
 
         const { id } = req.params;
-        console.log(id, "pooffh");
 
 
         getsingleorderdata(id, dbrepository).then((response) => {
-            console.log(response);
             res.json(response)
 
         }).catch((err) => console.log(err))

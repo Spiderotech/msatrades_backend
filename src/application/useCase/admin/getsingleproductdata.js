@@ -6,7 +6,6 @@ const getsingleproductdata =async (id,repositories) => {
 
         const productdata =await repositories.getsingleproduct(id)
 
-        console.log(productdata);
         return { status: true,productdata};
 
     } catch (err) {

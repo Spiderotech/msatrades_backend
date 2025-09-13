@@ -7,7 +7,6 @@ const createcategory = async (name, description, isSubCategory,image, parentCate
     try {
        
         const category = await repositories.createcategorys(name, description, isSubCategory,image, parentCategory)
-        console.log(category,"hhh");
     
         return { status: true,category }
 

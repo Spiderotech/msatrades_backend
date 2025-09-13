@@ -6,7 +6,6 @@ const getallcategorydata =async (repositories) => {
 
         const categorydata =await repositories.getcategory()
 
-        console.log(categorydata);
         return { status: true,categorydata};
 
     } catch (err) {
